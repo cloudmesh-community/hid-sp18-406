@@ -9,7 +9,7 @@ from db_stub import get_database
 def db_get():  # noqa: E501
     """db_get
 
-    Returns timestamp information of the file # noqa: E501
+    Returns Database information of the file # noqa: E501
 
 
     :rtype: Database
