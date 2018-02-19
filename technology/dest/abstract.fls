@@ -1,0 +1,7 @@
+PWD /home/manoj/loosu_ramya/hid-sp18-406/technology
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT abstract.tex
+OUTPUT dest/abstract.log
