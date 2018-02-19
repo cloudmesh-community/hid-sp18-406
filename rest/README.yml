@@ -1,0 +1,6 @@
+Steps to execute the services to retrieve system information
+
+Platform processor : http://127.0.0.1:5000/processor
+Ram Usage : http://127.0.0.1:5000/ram
+Disk Usage : http://127.0.0.1:5000/disk
+User Information : http://127.0.0.1:5000/user
