@@ -8,10 +8,9 @@
 * Provide Hostname of the client
 * Provides Protocol name of the client (Ex: Mongod)
 
-Here, I have implemented a Databse object that takes client database host URL
-name as the input in the form of query parameter.
+Here, I have implemented a Database object that will return database attributes.
 The swagger code-gen generate the server stub code for us by taking the 
-time.yaml as input and gives us a nice foundation to develop the main logic.
+db.yaml as input and gives us a foundation to develop the main logic.
 Main logic : *db_stub.py*
 Location - 
 https://github.com/cloudmesh-community/hid-sp18-406/blob/master/swagger/flaskConnexion/swagger_server/controllers/db_stub.py
@@ -22,7 +21,7 @@ You can download the code from the repository and test or enhance further.
 ### Follow the below steps
 
 * Clone the repository
-* Run the Database service in the backgorund
+* Run the Database service in the background
 * Navigate to "flaskConnexion" directory 
 * Start the service by executing the command "python -m swagger_server"
 
