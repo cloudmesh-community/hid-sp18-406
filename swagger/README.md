@@ -14,8 +14,7 @@ The swagger code-gen generate the server stub code for us by taking the
 time.yaml as input and gives us a nice foundation to develop the main logic.
 Main logic : *db_stub.py*
 Location - 
-https://github.com/cloudmesh-community/hid-sp18-406/blob/master/swagger
-/flaskConnexion/swagger_server/controllers/db_stub.py
+https://github.com/cloudmesh-community/hid-sp18-406/blob/master/swagger/flaskConnexion/swagger_server/controllers/db_stub.py
 
 
 You can download the code from the repository and test or enhance further.
