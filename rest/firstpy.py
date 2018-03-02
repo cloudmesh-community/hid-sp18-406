@@ -5,6 +5,13 @@ import platform
 
 app = Eve()
 
+my_settings = {
+        'MONGO_HOST': 'localhost',
+        'MONGO_PORT':27017,
+        'MONGO_DBNAME':'test',
+        'DOMAIN':{'contacts':{}}
+}
+
 
 @app.route('/processor')
 def processor():
