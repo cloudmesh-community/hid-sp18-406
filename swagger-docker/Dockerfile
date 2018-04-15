@@ -1,42 +1,39 @@
-FROM openjdk:7
-RUN mkdir -p /usr/src/app
-COPY . /usr/src/app
-WORKDIR /usr/src/app
-RUN wget https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar -P /usr/src/app
-COPY db.yaml /usr/src/app/
+FROM mongo:latest
+EXPOSE 27017
+FROM ubuntu:16.04
+#FROM python:3-alpine 
+MAINTAINER DG
 
-RUN java -jar swagger-codegen-cli-2.3.1.jar generate \
--i /usr/src/app/db.yaml \
--l python-flask \
--o /usr/src/app/flaskConnexion \
--D supportPython2=true
+RUN apt-get update -q && apt-get install -qy \
+    build-essential \
+    python-dev \
+    python-pip \
+    #libssl-dev \
+    zlib1g-dev \
+    #libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    pandoc \
+    wget \
+    curl \
+    #emacs \
+    git-core \
+    default-jre \
+    software-properties-common -y
+
+#RUN apt-get update -q && apt-get install -qy default-jre 
 
 
 
 
-#WORKDIR /usr/src/app/flaskConnexion
+RUN git clone https://github.com/cloudmesh-community/hid-sp18-406.git
 
-FROM python:3-alpine
+WORKDIR /hid-sp18-410/swagger-docker
 
-
-#RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
-COPY requirements.txt /usr/src/app/
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . /usr/src/app/flaskConnexion
-COPY default_controller.py /usr/src/app/flaskConnexion/swagger_server/controllers
-COPY db_stub.py /usr/src/app/flaskConnexion/swagger_server/controllers 
-COPY swagger.yaml /usr/src/app/flaskConnexion/swagger_server/swagger
-
-WORKDIR /usr/src/app/flaskConnexion
-
+RUN wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
 EXPOSE 8080
 
+#FROM openjdk:7 
+RUN make service
 
-
-ENTRYPOINT ["python"]
-
-CMD ["-m", "swagger_server"]
+CMD ["make", "start"]
