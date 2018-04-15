@@ -1,5 +1,5 @@
 % status: 0
-% chapter: TBD
+% chapter: Messaging
 
 \title{Twilio}
 
@@ -58,7 +58,7 @@ Nowadays updating information to communicate between the applications and
 customers is done through the text messages and emails. Communication enables 
 the business people to be involved with their customers and on the other hand
 to capture the interest of customers which are increasingly sophisticated. 
-This process of managing company’s relationships and interactions with the 
+This process of managing relationships and interactions with the 
 customers is called Customer Relationship Management
 ~\cite{hid-sp18-406-twilio-intro1}. However, maintaining the communication 
 implementation from the scratch for every business oriented applications will 
@@ -66,7 +66,7 @@ lead to wastage of resources. To enable the business entrepreneurs to focus
 their time on implementing the services required for improving the user 
 experiences Twilio provides a common developer platform to design the 
 communications to the customers. Using this platform software developers can add
-SMS and instant messages, video or voice calling apps without owning the 
+instant messages, video or voice calling apps without owning the 
 back-end infrastructure to maintain the services. This is achieved by providing
 developers with APIs which are required to build communication-based 
 functionality which best suits their application.  All of these required 
@@ -92,15 +92,15 @@ by Twilio and provides a final API which is ready to be integrated into the
 business applications to enable communication interfaces with the customers. 
 There are various architecture diagrams for Twilio, and it varies based on the 
 communications APIs and the business applications. Here, let's consider the 
-basic architecture for building telephony applications using Twilio’s TwiML
+basic architecture for building telephony applications using Twilio TwiML
 ~\cite{hid-sp18-406-twilio-architecture1}.
 
 Figure~\ref{f:architecture} explains the workflow of Twilio.
   
 
 TwiML is the set of instructions which generates the workflow depending on the 
-incoming call or SMS.When the caller dials Twilio’s sandbox or purchased number 
-or sends an SMS on their phone, Twilio’s inbound call dispatcher receives the 
+incoming call or SMS. When the caller dials number purchased from Twilio 
+or sends an SMS on their phone, Twilio's inbound call dispatcher receives the 
 call or text. 
 a. Now the connection is established, and the dispatcher will make an HTTP GET 
 or POST to the Voice or SMS URL specified given for that particular number. 
@@ -110,10 +110,10 @@ the purchased Twilio Numbers.
 b. The TwiML document is used as a point of reference to respond to the Twilio 
 requests for the Voice and SMS URL which are specified in the Sandbox. TwiML 
 parser will scan this document and then executes the specified word tag. For 
-this example, for a <say> verb in the document Twilio would perform the action 
+this example, for a 'say' verb in the document Twilio would perform the action 
 as reading the text to the caller using the text-to-speech synthesizer; for 
-<dial> Twilio would perform the action such as dialling the specified number 
-and connect the caller; <redirect> Twilio would fetch another TwiML document
+'dial' Twilio would perform the action such as dialling the specified number 
+and connect the caller; 'redirect' Twilio would fetch another TwiML document
 ~\cite{hid-sp18-406-twilio-architecture2}.
 c. In order to send and receive the content on the web, Twilio will perform an 
 HTTP POST to a web server and the metadata associated with the call is embedded
@@ -124,20 +124,23 @@ will be passed as URL query string parameters
 
 
 \begin{figure}[!ht]
-  \centering\includegraphics[width=\columnwidth]{image/Twilio-Architecture.PNG}
+  \centering\includegraphics[width=\columnwidth]{images/Twilio-Architecture.png}
   \caption{Twilio Architecture~\cite{hid-sp18-406-twilio-architecture-image}}
 \label{f:architecture}
 \end{figure}
 
 
+
+
 \subsection{Programmable Interfaces}
 
-Twilio’s software-based platform provides developers with prefabricated building
-blocks to integrate voice, messaging, video and several add-ons like sentimental
-analysis into the application which are required to build communication 
-functionality. These APIs are further developed as use case API’s which 
-provide a higher level of abstraction of building communication interfaces for 
-application and thus enabling programmable connectivity:
+Twilio provides software-based platform for developers along with 
+prefabricated building blocks to integrate voice, messaging, video and 
+several add-ons like sentimental analysis into the application which are 
+required to build communication functionality. These APIs are further developed 
+as use case API's which provide a higher level of abstraction of building 
+communication interfaces for application and thus enabling programmable 
+connectivity::
 a. Authy: It is very important to authenticate the contact information when the 
 user signs up into the business application. One of the best approaches is to do
 account verification through SMS. Twilio provides two-factor authentication API.
@@ -160,22 +163,22 @@ In order to deliver time-sensitive alert messages, a text message is the most
 suitable way compared to emails as it helps to reach the end users quickly by 
 avoiding the pile of inbox emails. APIs are provided to send out alert messages
 as notifications from the web and mobile applications.
-e. Click to Call
+e. Click to Call:
 Customers always look for easy ways to reach their business people such as 
-customer care. It is very important to keep the customers in such matters and 
-Twilio provides Click to Call APIs for these requirements which enable 
+customer care. It is very important to keep the customers happy in such matters 
+and Twilio provides Click to Call APIs for these requirements which enable 
 developers to implement the call connections to the customer in the most 
 suitable way.
-f. Automated Survey
+f. Automated Survey:
 Feedback is an important factor which verifies the actual needs of customers and
 the features which need to be improvised based on those requirements. Using the
-Twilio’ automated survey APIs developer can build a survey form, which will
+Twilio's automated survey APIs developer can build a survey form, which will
 call the customer at the point of service to get immediate feedback opinions. 
 Thus, these Automated Survey APIs integrates the customer relationship data to
 the database without any difficulty.
 
-Twilio’s scope is wide apart from the above-listed APIs including services for 
-Masked Phone Numbers, Dynamic Call Center, Call Tracking, Call Forwarding, 
+The scope of Twilio is wide apart from the above-listed APIs including services 
+for Masked Phone Numbers, Dynamic Call Center, Call Tracking, Call Forwarding, 
 Workflow Automation, ETA Notifications, Instant Lead Alerts, Employee Directory
 and many more~\cite{hid-sp18-406-twilio-architecture4}.
    
@@ -190,20 +193,20 @@ step is to map the virtual number to a request URL which will guide the
 communication interface how to manage the content of phone calls. Here, the 
 developer will define a set of business rules or instructions to manage the 
 calls from each customer. These rules include: 
-a. Say – update the customer regarding the order update or play the prerecorded 
+a. Say : update the customer regarding the order update or play the prerecorded 
 informational message 
-b. Gather - collect all the required information from the user 
-c. Record – record the complete call conversation 
-d. Reject – Hang up 
-e. Dial – make  a call to the number
+b. Gather : collect all the required information from the user. 
+c. Record : record the complete call conversation. 
+d. Reject : Hang up. 
+e. Dial : make  a call to the number.
 Here, Twilio initiates the phone call or message flow on the one end and on the 
 other end, it provides APIs for developers who will instruct or code the 
-Twilio’s actions for those calls. Twilio also provides load balancing of the 
+Twilio's actions for those calls. Twilio also provides load balancing of the 
 calls using cluster~\cite{hid-sp18-406-twilio-usecase1}.
 
 \subsection{Communication for on-demand service}
 
-Lyft is a ridesharing application. Its on-demand service requested by the 
+Lyft is a ridesharing application. The on-demand service requested by the 
 customers requires real-time communication between the passengers and the 
 drivers. By integrating Twilio communication APIs Lyft has ensured real-time 
 SMS driver updates for passengers and also the ability of passenger calling the
@@ -211,17 +214,17 @@ driver without sharing the individual numbers. Here, when the ride is accepted
 by the driver, a communication channel is established without the dependency of
 sharing the individual numbers. The call button on the application will 
 initiate a phone call to the Twilio phone number assigned to that ride and 
-routes to the driver’s mobile phone. Thus ensuring privacy standards for both
+routes to the driver mobile phone. Thus, ensuring privacy standards for both
 drivers and passengers. Lyft also uses other features of Twilio such as sending
 notifications regarding the ride updates using the SMS integration API.  
-Twilio’s unique feature such as masked numbers integrated for Lyft’s Lost and 
-found procedure~\cite{hid-sp18-406-twilio-usecase1}.
+The unique feature of Twilio such as masked numbers was integrated for Lyft's 
+Lost and found procedure~\cite{hid-sp18-406-twilio-usecase1}.
 
 Figure~\ref{f:usecase} explains the usecase of Twilio.
 
 
 \begin{figure}[!ht]
-  \centering\includegraphics[width=\columnwidth]{image/Twilio-Usecase.PNG}
+  \centering\includegraphics[width=\columnwidth]{images/Twilio-Usecase.png}
   \caption{Twilio Usecase~\cite{hid-sp18-406-twilio-usecase-image}}
 \label{f:usecase}
 \end{figure}
@@ -238,9 +241,9 @@ effectively using context related to that interaction. As customer experience
 has become the significant factor, programmable communications have become more 
 crucial than ever to the success of businesses today
 ~\cite{hid-sp18-406-twilio-conclusion1}. 
-
-Twilio's customizable alerts help companies to determine the most suitable way 
-to reach the users based on their preferences. Twilio has also extended APIs 
+ 
+The customizable alerts of Twilio help companies to determine the most suitable 
+way to reach the users based on their preferences. Twilio has also extended APIs 
 which allow developers to embed video conferencing within an application. Twilio
 best fits the customer needs because of its global compatibility feature which 
 includes more than 1000 wireless carriers around the world. By integrating  
