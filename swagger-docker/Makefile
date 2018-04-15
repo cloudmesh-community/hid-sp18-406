@@ -21,7 +21,7 @@ docker-pull:
 
 docker-start:
 	@echo "starting the service in container..."
-	docker run -v /home/:/home/ -p 8080:8080 -p 27017:27017 ramyadg/cloudmesh-dbinfo
+	docker run -p 8080:8080 ramyadg/cloudmesh-dbinfo
 
 docker-stop:
 	@echo "stoping the service..."
@@ -52,6 +52,8 @@ service: dest
 	pip install --upgrade pip
 
 	cp -r *.py $(DESTDIR)/swagger_server/controllers
+	cp database.py $(DESTDIR)/swagger_server/models
+	cp base_model_.py $(DESTDIR)/swagger_server/models
 	cd $(DESTDIR) && pip install -r requirements.txt && \
 	python setup.py install 
 	
