@@ -50,6 +50,7 @@ service: dest
 	
 	rm *.jar
 	pip install --upgrade pip
+	pip install pymongo
 
 	cp -r *.py $(DESTDIR)/swagger_server/controllers
 	cp database.py $(DESTDIR)/swagger_server/models
@@ -61,6 +62,10 @@ service: dest
 
 start:  
 	@echo "starting the service..."
+	rm /var/lib/mongodb/mongod.lock
+	mongod --repair
+	service mongodb start
+	service mongodb status
 	cd $(DESTDIR) && python -m swagger_server
 
 test:
