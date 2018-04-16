@@ -39,7 +39,7 @@ Output :
 {
   "database": {
     "endpoint": "localhost:27017",
-    "name": "manoj-HP-Pavilion-Notebook",
+    "name": "dg-HP-Pavilion-Notebook",
     "protocol": "mongod"
   }
 }
