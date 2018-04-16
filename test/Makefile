@@ -11,7 +11,8 @@ docker-all: docker-build docker-start
 
 docker-build:
 	@echo "building the image from docker file..."
-	docker build -t ramyadg/cloudmesh-dbinfo .
+	docker build -t ramyadg/cloudmesh-dbinfo . 
+	docker run -p 8080:8080 ramyadg/cloudmesh-dbinfo --link mongo:mongo
 	@echo "image DONE"
 
 docker-pull:
@@ -21,7 +22,10 @@ docker-pull:
 
 docker-start:
 	@echo "starting the service in container..."
-	docker run -p 8080:8080 ramyadg/cloudmesh-dbinfo
+	#docker run -p 8080:8080 ramyadg/cloudmesh-dbinfo
+	docker pull mongo:latest
+	docker run -v "$(pwd)":/data --name mongo -d mongo mongod --smallfiles
+
 
 docker-stop:
 	@echo "stoping the service..."
@@ -63,7 +67,6 @@ service: dest
 start:  
 	@echo "starting the mongo service..."
 	cd $(DESTDIR) && python -m swagger_server
-	nohup /usr/bin/mongod &
 test:
 	curl http://localhost:8080/api/db
             

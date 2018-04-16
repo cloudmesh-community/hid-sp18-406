@@ -1,9 +1,12 @@
 from pymongo import MongoClient
 # pprint library is used to make the output look more pretty
 from pprint import pprint
+import os
 # connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string
 def get_database():
-	client = MongoClient("localhost", 27017)
+	ip = os.environ['MONGO_PORT_27017_TCP_ADDR']
+	port = os.environ['MONGO_PORT_27017_TCP_PORT']
+	client = MongoClient(ip, port)
 	db=client.test_database
 	answer = {}
 	# pprint(client.test_database)
