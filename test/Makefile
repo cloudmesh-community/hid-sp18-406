@@ -9,7 +9,7 @@ all: service start
 docker-all: docker-build docker-start
 	@echo "DONE"
 
-docker-build:
+docker-start:
 	@echo "building the image from docker file..."
 	docker build -t ramyadg/cloudmesh-dbinfo . 
 	docker run --link mongo:mongo -p 8080:8080 ramyadg/cloudmesh-dbinfo
@@ -20,7 +20,7 @@ docker-pull:
 	docker pull ramyadg/cloudmesh-dbinfo
 	@echo "image DONE"
 
-docker-start:
+docker-build:
 	@echo "starting the service in container..."
 	#docker run -p 8080:8080 ramyadg/cloudmesh-dbinfo
 	docker pull mongo:latest
@@ -69,7 +69,7 @@ start:
 	@echo "starting the mongo service..."
 	cd $(DESTDIR) && python -m swagger_server
 test:
-	curl http://localhost:8080/api/db
+	curl http://0.0.0.0:8080/api/db
             
 stop:
 	@echo "stopping the service"
