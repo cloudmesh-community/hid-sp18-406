@@ -61,10 +61,7 @@ service: dest
 	
 
 start:  
-	@echo "starting the service..."
-	mongod --bind_ip 0.0.0.0 --noauth
-	service mongodb start
-	service mongodb status
+	@echo "starting the mongo service..."
 	cd $(DESTDIR) && python -m swagger_server
 
 test:
