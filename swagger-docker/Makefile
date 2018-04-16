@@ -62,8 +62,7 @@ service: dest
 
 start:  
 	@echo "starting the service..."
-	rm /var/lib/mongodb/mongod.lock
-	mongod --repair
+	mongod --bind_ip 0.0.0.0 --noauth
 	service mongodb start
 	service mongodb status
 	cd $(DESTDIR) && python -m swagger_server
