@@ -1,0 +1,44 @@
+---
+swagger: "2.0"
+info:
+  description: "A simple service to get database info as an example of using swagger\
+    \ -2.0 specification and codegen"
+  version: "0.0.1"
+  title: "databaseInfo"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    name: "Cloudmesh REST Service"
+  license:
+    name: "Apache"
+host: "localhost:8080"
+basePath: "/api"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /db:
+    get:
+      description: "Returns database information of the file"
+      operationId: "db_get"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "database info"
+          schema:
+            $ref: "#/definitions/Database"
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
+definitions:
+  Database:
+    type: "object"
+    required:
+    - "database"
+    properties:
+      database:
+        type: "string"
+    example:
+      database: "database"
