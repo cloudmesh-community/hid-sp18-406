@@ -12,7 +12,7 @@ docker-all: docker-build docker-start
 docker-build:
 	@echo "building the image from docker file..."
 	docker build -t ramyadg/cloudmesh-dbinfo . 
-	docker run -p 8080:8080 ramyadg/cloudmesh-dbinfo --link mongo:mongo
+	docker run --link mongo:mongo -p 8080:8080 ramyadg/cloudmesh-dbinfo
 	@echo "image DONE"
 
 docker-pull:
@@ -57,6 +57,7 @@ service: dest
 	pip install pymongo
 
 	cp -r *.py $(DESTDIR)/swagger_server/controllers
+	cp db_stub.py $(DESTDIR)/swagger_server/controllers
 	cp database.py $(DESTDIR)/swagger_server/models
 	cp base_model_.py $(DESTDIR)/swagger_server/models
 	cd $(DESTDIR) && pip install -r requirements.txt && \

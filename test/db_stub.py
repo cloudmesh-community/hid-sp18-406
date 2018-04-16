@@ -6,7 +6,9 @@ import os
 def get_database():
 	ip = os.environ['MONGO_PORT_27017_TCP_ADDR']
 	port = os.environ['MONGO_PORT_27017_TCP_PORT']
+	print str(ip) + ":" + str(port)
 	client = MongoClient(ip, port)
+	print 'conect success'
 	db=client.test_database
 	answer = {}
 	# pprint(client.test_database)
