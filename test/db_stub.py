@@ -5,7 +5,7 @@ import os
 # connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string
 def get_database():
 	ip = os.environ['MONGO_PORT_27017_TCP_ADDR']
-	port = os.environ['MONGO_PORT_27017_TCP_PORT']
+	port = int(os.environ['MONGO_PORT_27017_TCP_PORT'])
 	print str(ip) + ":" + str(port)
 	client = MongoClient(ip, port)
 	print 'conect success'
