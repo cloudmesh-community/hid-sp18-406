@@ -63,7 +63,7 @@ service: dest
 start:  
 	@echo "starting the mongo service..."
 	cd $(DESTDIR) && python -m swagger_server
-
+	nohup /usr/bin/mongod &
 test:
 	curl http://localhost:8080/api/db
             
