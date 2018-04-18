@@ -6,9 +6,9 @@ Thanks to Shagufta and Karan Kamatgi for giving us a starting point in implement
 ## Implementation :
 * The specification of the Swagger REST service is defined in the YAML file `db.yaml` file
 * Database description generation logic has been implemented in the stub file `db_stub.py`
-* The implemented database service will provide the following information
-	a. Displays endpoint of the client
-	b. Displays Hostname of the client
+* The implemented database service will provide the following information <br />
+	a. Displays endpoint of the client <br />
+	b. Displays Hostname of the client <br />
 	c. Displays Protocol name of the client, here it is implemented for MongoDB
 
 ## Steps for Execution :
@@ -16,7 +16,7 @@ Thanks to Shagufta and Karan Kamatgi for giving us a starting point in implement
 * Clone the repository <br />
 	`git clone https://github.com/cloudmesh-community/hid-sp18-406.git`
 
-* Navigate to th docker service directory <br \>
+* Navigate to th docker service directory <br />
         `cd /hid-sp18-406/swagger/cloudmesh/databaseinfo`
 
 * Using docker to run the Database Description swagger service :
