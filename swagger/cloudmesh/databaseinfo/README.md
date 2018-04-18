@@ -17,9 +17,7 @@ Thanks to Shagufta and Karan Kamatgi for giving us a starting point in implement
 	`git clone https://github.com/cloudmesh-community/hid-sp18-406.git`
 
 * Navigate to th docker service directory <br \>
-
         `cd /hid-sp18-406/swagger/cloudmesh/databaseinfo`
-
 
 * Using docker to run the Database Description swagger service :
 
@@ -50,12 +48,12 @@ Thanks to Shagufta and Karan Kamatgi for giving us a starting point in implement
   	`make docker test` -- curl for the database description details
 
   Output
-	`{ <br />
-  	  "database": { <br />
-    	  "endpoint": "172.17.0.2:27017", <br /> 
-          "name": "929f3e238ba0", <br />
-   	  "protocol": "mongod" <br />
- 	   } <br />
+	`{
+  	  "database": { 
+    	  "endpoint": "172.17.0.2:27017",  
+          "name": "929f3e238ba0", 
+   	  "protocol": "mongod" 
+ 	   } 
 	}`
 
 
