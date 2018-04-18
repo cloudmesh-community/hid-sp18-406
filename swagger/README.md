@@ -21,9 +21,16 @@ You can download the code from the repository and test or enhance further.
 ### Follow the below steps
 
 * Clone the repository
-* Run the Database service in the background
-* Navigate to "flaskConnexion" directory 
-* Start the service by executing the command "python -m swagger_server"
+* Run the Database service in the MongoDB background
+	If the mongod service is not installed, install the service by following the steps given in this link
+	https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+* Start the mongod service
+	``sudo service mongod start``	
+* Navigate to "flaskConnexion" directory
+* Install pymongo and connexion if not present,
+	``pip install pymongo`` 
+	``pip install connexion``
+* Start the service by executing the command ``python -m swagger_server``
 
 You will see something like this 
 Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
