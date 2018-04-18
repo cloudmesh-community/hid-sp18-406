@@ -24,7 +24,7 @@ You can download the code from the repository and test or enhance further.
 * Run the Database service in the MongoDB background
 	If the mongod service is not installed, install the service by following the steps given in this link
 	https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
-* Start the mongod service <br />   
+* Start the mongod service    
 	``sudo service mongod start``   	
 * Navigate to "flaskConnexion" directory <br />
 * Install pymongo and connexion if not present, <br />
