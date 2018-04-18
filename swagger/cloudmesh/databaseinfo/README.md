@@ -6,13 +6,17 @@ Thanks to Shagufta and Karan Kamatgi for giving us a starting point in implement
 ## Implementation :
 * The specification of the Swagger REST service is defined in the YAML file `db.yaml` file
 * Database description generation logic has been implemented in the stub file `db_stub.py`
-* The server-side code was generated using Swagger Codegen
+* The implemented database service will provide the following information
+	a. Displays endpoint of the client
+	b. Displays Hostname of the client
+	c. Displays Protocol name of the client, here it is implemented for MongoDB
 
 ## Steps for Execution :
 
-* clone the repository
+* Clone the repository <br />
+	`git clone https://github.com/cloudmesh-community/hid-sp18-406.git`
 
-* navigate to the directory 
+* Navigate to th docker service directory <br \>
 
         `cd /hid-sp18-406/swagger/cloudmesh/databaseinfo`
 
@@ -46,12 +50,12 @@ Thanks to Shagufta and Karan Kamatgi for giving us a starting point in implement
   	`make docker test` -- curl for the database description details
 
   Output
-	`{
-  	  "database": {
-    	  "endpoint": "172.17.0.2:27017", 
-          "name": "929f3e238ba0", 
-   	  "protocol": "mongod"
- 	   }
+	`{ <br />
+  	  "database": { <br />
+    	  "endpoint": "172.17.0.2:27017", <br /> 
+          "name": "929f3e238ba0", <br />
+   	  "protocol": "mongod" <br />
+ 	   } <br />
 	}`
 
 
@@ -59,7 +63,7 @@ Thanks to Shagufta and Karan Kamatgi for giving us a starting point in implement
 ## Service Descprition
 
 This swagger REST service aims at exposing the database details of 
-any database residing on the host container. The basic idea is to
+MongoDB database residing on the host container. The basic idea is to
 create a docker container with all the implementation details and 
 create another image to host MongoDB, linking these images helped
 me to connect the two images and extract the database details
