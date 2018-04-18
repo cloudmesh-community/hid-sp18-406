@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER DG
+MAINTAINER Ramyashree DG <rdasego@iu.edu>
 
 RUN apt-get update -q && apt-get install -qy \
     build-essential \
@@ -10,7 +10,7 @@ RUN apt-get update -q && apt-get install -qy \
     #libbz2-dev \
     libreadline-dev \
     libsqlite3-dev \
-    pandoc \
+    #pandoc \
     wget \
     curl \
     emacs \
@@ -20,7 +20,7 @@ RUN apt-get update -q && apt-get install -qy \
 
 #RUN apt-get update -q && apt-get install -qy default-jre 
 RUN git clone https://github.com/cloudmesh-community/hid-sp18-406.git
-WORKDIR /hid-sp18-406/swagger/docker
+WORKDIR /hid-sp18-406/swagger/cloudmesh/databaseinfo
 
 
 RUN wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
