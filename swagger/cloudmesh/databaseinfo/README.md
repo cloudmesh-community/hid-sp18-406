@@ -36,7 +36,7 @@ Thanks to Shagufta and Karan Kamatgi for giving us a starting point in implement
 * Test the service :
   Mongo service will be up and running, check the below API in browser 
   
-  	for example - `0.0.0.0:8080/api/db`
+  	for example - `http://0.0.0.0:8080/api/db`
 	
 	This URL is verified in Google Chrome and Mozilla FireFox.
 
