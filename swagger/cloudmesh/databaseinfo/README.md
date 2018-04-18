@@ -14,7 +14,7 @@ Thanks to Shagufta and Karan Kamatgi for giving us a starting point in implement
 
 * navigate to the directory 
 
-        `cd /hid-sp18-406/swagger/docker/`
+        `cd /hid-sp18-406/swagger/cloudmesh/databaseinfo`
 
 
 * Using docker to run the Database Description swagger service :
